@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ra Ai</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600&family=Readex+Pro:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="logo" href="#">Ra <b>Ai</b></a>
+    <nav class="nav"><span class="chip active">الاستوديو</span></nav>
+  </header>
+  <section class="hero">
+    <h1>منصة Ra Ai لتوليد الصور</h1>
+    <p class="lead">الواجهة منشورة. توليد الصور يحتاج سيرفر Node — شغّله محلياً من ملفات المشروع.</p>
+  </section>
+  <div class="panel active">
+    <div class="controls">
+      <label>وصف الصورة</label>
+      <textarea id="prompt" placeholder="اكتب وصفاً..."></textarea>
+      <button type="button" class="btn primary" id="go">توليد (محلي فقط)</button>
+      <p class="msg" id="msg">هذه نسخة GitHub Pages للواجهة. للتوليد الفعلي: نزّل الملفات وشغّل node server.js</p>
+    </div>
+    <div class="frame" id="preview"><span>الصور تظهر عند تشغيل السيرفر محلياً</span></div>
+  </div>
+  <footer>© Ra Ai — Rashad Haitham Maaly</footer>
+</div>
+<script>
+document.getElementById('go').onclick = async () => {
+  const msg = document.getElementById('msg');
+  msg.className = 'msg err';
+  msg.textContent = 'التوليد غير متاح على GitHub Pages. استخدم النسخة المحلية (node server.js) أو استضافة تدعم Node.';
+};
+</script>
+</body>
+</html>
